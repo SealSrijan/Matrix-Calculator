@@ -3,8 +3,8 @@
 <h3>Author: Srijan</h3>
 
 <h4>
-1. Matrix addition
+<br>1. Matrix addition
 2. Matrix subtraction
 3. Both
 4. Scalar Multiplication
-5. Exit</h4> 
+5. Exit</br>></h4> 
