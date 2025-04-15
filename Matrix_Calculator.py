@@ -1,3 +1,18 @@
+import numpy as np
+def matrix_multiplication(a,b):
+    A = np.array(a)
+    B = np.array(b)
+    if len(a[0]) != len(b):
+        print("Matrix multiplication not possible (columns of A ≠ rows of B)")
+        return
+    AB = np.dot(A, B)
+    print("\nMatrix Multiplication (A x B) →")
+    for row in AB:
+        for val in row:
+            print(val, end="\t")
+        print()
+    return
+
 def matrix_addition(a,b):
     print("Matrix addition →")
     print("A + B =")
@@ -31,7 +46,13 @@ def scalar_multiplication(a, b):
         print()
 
 print("Matrix calculator","\nby Srijan\n")
-ans = int(input("1. Matrix addition\n2. Matrix subtraction\n3. Both\n4. Scalar Multiplication\n5. Exit\nEnter your choice: "))
+print("1. Matrix addition")
+print("2. Matrix subtraction")
+print("3. Both")
+print("4. Scalar Multiplication")
+print("5. Matrix Multiplication")
+print("6. Exit")
+ans = int(input("\nEnter your choice: "))
 print("For 1st matrix (A) →")
 a_rows = int(input("Enter number of rows: "))
 a_columns = int(input("Enter number of columns: "))
@@ -71,21 +92,20 @@ if ans >= 1 and ans <= 3:
         print("Matrix addition and subtraction not possible")
         exit()
 
-if ans == 5:
+if ans == 6:
     print("Exiting...")
     exit()
 elif ans == 1:
-    # print("Matrix addition")
     matrix_addition(a, b)
 elif ans == 2:
-    # print("Matrix subtraction")
     matrix_substraction(a, b)
 elif ans == 3:
-    # print("Matrix addition and subtraction")
     matrix_addition(a, b)
     matrix_substraction(a, b)
 elif ans == 4:
     scalar_multiplication(a, b)
+elif ans == 5:
+    matrix_multiplication(a, b)
 else:
     print("Invalid choice")
     exit()
